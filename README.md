@@ -28,11 +28,18 @@ brane import wscs-2021/data-utils
 
 ## Usage
 
-1. Install dependencies via `pip install -r requirements.txt`.
-2. Run via executable:
-    ```bash
-    INPUTPATH="path/to/input.csv" OUTPUTDIR="path/to/output/folder/" src/run.py downcast
-    ```
+Function **downcast**:
+
+`downcast(input_path, output_dir)`
+
+```sh
+> import data-utils;
+> downcast("path/to/input.csv", "path/to/output_dir/")
+
+Wrote optimised file to a 'parquet' file.
+    Disk Usage: 2.88k KB -> 2.43 KB (-15.57%)
+    Memory Usage: 5.25 KB -> 1.73 KB (-67.07%)
+```
 
 ## Test
 
