@@ -1,0 +1,14 @@
+{
+  "fruit": {
+    "dtype": "nominal",
+    "categories": ["apple", "orange"]
+  },
+  "score": {
+    "dtype": "ordinal",
+    "mapper": {
+      "low": 0,
+      "average":  1,
+      "high": 2
+    }
+  }
+}
