@@ -1,4 +1,4 @@
-name: downcast # Package name in Brane
+name: data-utils # Package name in Brane
 version: 0.1.0
 kind: compute
 
@@ -8,17 +8,20 @@ dependencies:
   - python3-yaml
 
 install:
-  - pip3 install pandas fastparquet numpy
+  - pip3 install -r requirements.txt
 
 files:
-  - run.py
-  - data_type_optimiser.py
-  - schema.py
-  - utils.py
+  - src/run.py
+  - src/downcaster.py
+  - src/optimiser.py
+  - src/parameter.py
+  - src/schema.py
+  - src/utils.py
+  - requirements.txt
 
 entrypoint:
   kind: task
-  exec: run.py
+  exec: src/run.py
 
 actions:
   'downcast': # Function name in BraneScript
@@ -29,7 +32,7 @@ actions:
       - type: string
         name: inputpath
       - type: string
-        name: outputpath
+        name: outputdir
     output:
       - type: string
         name: output
