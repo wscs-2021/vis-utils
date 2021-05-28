@@ -8,6 +8,14 @@ Currently, we only have a single feature:
 
 -  Downcast data files, which makes sure that their data types per column are using the most efficient data type memory-wise.
 
+## Installation
+
+Import directly from GitHub:
+
+```sh
+brane import wscs-2021/data-utils
+```
+
 ## Requirements
 
 - pandas
