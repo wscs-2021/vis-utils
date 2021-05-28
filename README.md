@@ -1,6 +1,12 @@
-# downcast
+# data-utils
 
-Allows for downcasting data files, which makes sure that their data types per column are using the most efficient data type memory-wise.
+A data utility package for Brane.
+
+## Features
+
+Currently, we only have a single feature:
+
+-  Downcast data files, which makes sure that their data types per column are using the most efficient data type memory-wise.
 
 ## Requirements
 
