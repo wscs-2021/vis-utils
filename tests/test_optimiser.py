@@ -19,7 +19,8 @@ options_optimiser = PlotOptionsOptimiser(
 axes_optimiser = PlotAxesOptimiser(
     input_path=dummy_input_path,
     x_axis=dummy_x_axis,
-    y_axis=dummy_y_axis
+    y_axis=dummy_y_axis,
+    hue_axis=""
 )
 
 def test_plot():
