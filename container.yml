@@ -1,4 +1,4 @@
-name: data-utils # Package name in Brane
+name: vis-utils # Package name in Brane
 version: 0.1.0
 kind: compute
 
@@ -12,11 +12,9 @@ install:
 
 files:
   - src/run.py
-  - src/downcaster.py
-  - src/optimiser.py
-  - src/parameter.py
-  - src/schema.py
-  - src/utils.py
+  - src/plot_optimiser.py
+  - src/plot_options_optimiser.py
+  - src/plot_axes_optimiser.py
   - requirements.txt
 
 entrypoint:
@@ -24,15 +22,42 @@ entrypoint:
   exec: src/run.py
 
 actions:
-  'downcast': # Function name in BraneScript
+  'plot': # Function name in BraneScript
     command:
       args:
-        - downcast # functions key in Python
+        - plot # functions key in Python
     input:
       - type: string
-        name: inputpath
+        name: input_path
+
+    output:
       - type: string
-        name: outputdir
+        name: output
+  'plot_options': # Function name in BraneScript
+    command:
+      args:
+        - plot_options # functions key in Python
+    input:
+      - type: string
+        name: input_path
+      - type: string
+        name: options
+    output:
+      - type: string
+        name: output
+  'plot_axes': # Function name in BraneScript
+    command:
+      args:
+        - plot_axes # functions key in Python
+    input:
+      - type: string
+        name: input_path
+      - type: string
+        name: x_axis
+      - type: string
+        name: y_axis
+      - type: string
+        name: hue_axis
     output:
       - type: string
         name: output
