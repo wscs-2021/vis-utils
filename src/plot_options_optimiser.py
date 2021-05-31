@@ -21,7 +21,9 @@ class PlotOptionsOptimiser:
         """
         self.data = ""
         self.input_path = input_path
-        self.options = options
+        self.options = ""
+        if options:
+            self.options = ast.literal_eval(options)
         self.plots = ['relplot', 'scatterplot', 'lineplot', 'displot', 'histplot', 'kdeplot',
                   'ecdfplot', 'rugplot', 'catplot', 'stripplot', 'swarmplot', 'boxplot',
                   'violinplot', 'pointplot', 'barplot']
@@ -39,8 +41,12 @@ class PlotOptionsOptimiser:
         elif i_ftype == 'parquet':
             self.data = pd.read_parquet(self.input_path)
 
+
     # Plot options
     def _plot_options(self):
+        # options = [
+        #           [['<column_name>'], '<plot_name']
+        #           ]
         final_string = ""
         count = 1
         for option in self.options:
