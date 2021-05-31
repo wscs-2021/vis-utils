@@ -42,7 +42,7 @@ Function **plot**:
 
 Function **plot_options**:
 
-`plot(input_path, options)`
+`plot_options(input_path, options)`
 
 ```sh
 > import vis-utils;
@@ -85,7 +85,7 @@ $ brane --debug test -d . plot
 Please provide input for the chosen function:
 
 [2021-05-26T10:28:13Z DEBUG] {}
-✔ input_path (string) · /data/plot/test/train.csv
+✔ input_path (string) · /data/plot/test/penguins.csv
 ```
 
-You should now see `<figure_name>.png` in `./plot/test/<figure_name>.png`.
+You should now see `<figure_name>.png` in `./<figure_name>.png`.
