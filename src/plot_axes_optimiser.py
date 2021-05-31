@@ -37,7 +37,7 @@ class PlotAxesOptimiser:
     # Plot with X axis
     def _do_dis(self):
         plt.figure()
-        x = self.x_axis
+        x_ax = self.x_axis
         if self.y_axis:
             x_ax = self.y_axis
         elif self.hue_axis:
