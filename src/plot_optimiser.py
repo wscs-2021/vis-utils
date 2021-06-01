@@ -102,7 +102,7 @@ class PlotOptimiser:
         count = 1
         for option in self.options:
             plt.figure()
-            fig_name = output_path + "/" + str(count)+"_"+option[0][0]+"_"+option[1]+".png"
+            fig_name = self.output_path + "/" + str(count)+"_"+option[0][0]+"_"+option[1]+".png"
             if option[1] not in self.plots:
                 return "Error: Plot name not recognized. The following are supported: " + self.plots
             elif not set(option[0]).issubset(set(self.data.columns)):
