@@ -13,8 +13,6 @@ install:
 files:
   - src/run.py
   - src/plot_optimiser.py
-  - src/plot_options_optimiser.py
-  - src/plot_axes_optimiser.py
   - requirements.txt
 
 entrypoint:
@@ -29,35 +27,17 @@ actions:
     input:
       - type: string
         name: input_path
-
-    output:
-      - type: string
-        name: output
-  'plot_options': # Function name in BraneScript
-    command:
-      args:
-        - plot_options # functions key in Python
-    input:
-      - type: string
-        name: input_path
-      - type: string
-        name: options
-    output:
-      - type: string
-        name: output
-  'plot_axes': # Function name in BraneScript
-    command:
-      args:
-        - plot_axes # functions key in Python
-    input:
-      - type: string
-        name: input_path
       - type: string
         name: x_axis
       - type: string
         name: y_axis
       - type: string
         name: hue_axis
+      - type: string
+        name: options
+      - type: string
+        name: output_path
+
     output:
       - type: string
         name: output
