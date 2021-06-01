@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4889434.svg)](https://doi.org/10.5281/zenodo.4889434)
+
 # vis-utils
 
 A visualization utility package for Brane.
