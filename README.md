@@ -81,7 +81,7 @@ The following plots are chosen for automatic plotting of data
 
 
 **No axes and options given**:
-- X_axis (String) and y_axis (String): `catplot`
+- X_axis (string) and y_axis (string): `catplot`
 - Else: `barplot`
 
 **Axes given (no options)**:
