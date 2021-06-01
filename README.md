@@ -1,5 +1,8 @@
 # vis-utils
 
+[![example workflow](https://github.com/wscs-2021/vis-utils/actions/workflows/test.yml/badge.svg)](https://github.com/wscs-2021/vis-utils/actions/workflows/test.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4889434.svg)](https://doi.org/10.5281/zenodo.4889434)
+
 A visualization utility package for Brane.
 
 ## Features
