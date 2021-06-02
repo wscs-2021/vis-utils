@@ -12,17 +12,10 @@ output_path = "tests"
 
 plot_optimiser = PlotOptimiser(
     input_path=dummy_input_path,
-    x_axis="",
-    y_axis="",
-    hue_axis="",
-    options="",
     output_path=output_path
 )
 options_optimiser = PlotOptimiser(
     input_path=dummy_input_path,
-    x_axis="",
-    y_axis="",
-    hue_axis="",
     options=dummy_options_path,
     output_path=output_path
 )
@@ -30,9 +23,7 @@ axes_optimiser = PlotOptimiser(
     input_path=dummy_input_path,
     x_axis=dummy_x_axis,
     y_axis=dummy_y_axis,
-    hue_axis="",
-    options="",
-    output_path=""
+    output_path=output_path
 )
 
 def test_plot():
@@ -56,7 +47,7 @@ def test_plot_options():
 
 def test_plot_axes():
     data = axes_optimiser.decide_plot()
-    paths = ['tests/dummy_data/sns_plot.png']
+    paths = ['tests/sns_plot.png']
 
     for path_r in paths:
         assert path.exists(path_r) is True

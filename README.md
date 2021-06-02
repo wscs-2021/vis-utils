@@ -41,36 +41,35 @@ Function **plot**:
 
 ```sh
 > import vis-utils;
-> plot("path/to/input.csv", (optional)"<column_name>", (optional)"<column_name>", (optional)"<column_name>", (optional) "options", (optional), (optional) "path/to/output.csv")
+> plot("path/to/input.csv", (optional)"<column_name>", (optional)"<column_name>", (optional)"<column_name>", (optional) "options", (optional) "path/to/output.csv")
 ```
 **Input**:
 - REQUIRED `input_path`: string, path to .csv/.json/.parquet data file
     - Example: "tests/dummy_data/penguins.csv"
-
-
 - OPTIONAL `x_axis`: string, column name of desired x_axis
     - Example: "species"
+    - Default: None
 - OPTIONAL `y_axis`: string, column name of desired y_axis
     - Example: "flipper_length_mm"
+    - Default: None
 - OPTIONAL `hue_axis`: string, column name of desired hue_axis
     - Example: "sex"
-  
-
+    - Default: None
 - OPTIONAL `options`: string, list of sublists, containing [subsublist of column names] and a plot name 
     - Example: `"[[['species', 'sex'], 'barplot'],[['species', 'flipper_length_mm'],'violinplot']]"`
     - Possible plot names: `'relplot', 'scatterplot', 'lineplot', 'displot', 'histplot', 'kdeplot',
       'ecdfplot', 'rugplot', 'catplot', 'stripplot', 'swarmplot', 'boxplot',
       'violinplot', 'pointplot', 'barplot'`
-
-
+    - Default: None
 - OPTIONAL `output_path`: string, path to directory where figures will be written
     - Example: "tests"
+    - Default: None
 
 **Notes**:
 - If no optional params are given, the function automatically plots all possible columns
 - If options is given, axes will be disregarded
-- not all axes need to be specified, all three can be combined in any way (e.g. x_axis + hue_axis)
-- If output_path is not specified, it will output to the same directory as the input file
+- Not all axes need to be specified, all three can be combined in any way (e.g. pass only x_axis and hue_axis)
+- If `output_path` is not specified, it will output to the same directory as the `input_path`
 
 **Output**:
 - Output text: string, paths to files and/or possible errors
@@ -79,9 +78,8 @@ Function **plot**:
 ## Automatic Plotting
 The following plots are chosen for automatic plotting of data
 
-
 **No axes and options given**:
-- X_axis (string) and y_axis (string): `catplot`
+- x_axis (string) and y_axis (string): `catplot`
 - Else: `barplot`
 
 **Axes given (no options)**:
@@ -98,14 +96,11 @@ pytest
 
 Test whether the API is executable:
 
-
-`make test_plot_executable`
-or
-`make test_options_executable`
-or
-`make test_axes_executable`
-
-
+```sh
+make test_plot_executable
+make test_options_executable
+make test_axes_executable
+```
 
 Test in Brane:
 
