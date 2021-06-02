@@ -7,7 +7,8 @@ import matplotlib.pyplot as plt
 
 class PlotOptimiser:
 
-    def __init__(self, input_path, x_axis, y_axis, hue_axis, options, output_path):
+    def __init__(self, input_path, x_axis=None, y_axis=None, 
+        hue_axis=None, options=None, output_path=None):
         """
         The PlotOptimiser optimises plotting automatically for the given dataset. It reads
         the input file, applies the plotting and writes the final plots .png to disk.
@@ -24,7 +25,7 @@ class PlotOptimiser:
         """
         self.data = ""
         self.input_path = input_path
-        self.options = ast.literal_eval(options) if options else ""
+        self.options = ast.literal_eval(options) if options else None
         self.x_axis = x_axis
         self.y_axis = y_axis
         self.hue_axis = hue_axis
@@ -119,7 +120,6 @@ class PlotOptimiser:
                                      "(data=self.data, x=option[0][0], y=option[0][1], hue=option[0][2], col=option[0][3])")
             else:
                 return "Error: Too many columns to plot for " + fig_name
-                continue
             count += 1
             plt.savefig(fig_name)
             final_string += self.output_path + "/" + fig_name + "\n"
