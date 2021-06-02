@@ -23,7 +23,7 @@ class PlotOptimiser:
         @param options: string, path to options file (optional)
         @param input_path: string, path to output figure file (optional)
         """
-        self.data = ""
+        self.data = None
         self.input_path = input_path
         self.options = ast.literal_eval(options) if options else None
         self.x_axis = x_axis
