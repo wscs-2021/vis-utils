@@ -42,10 +42,9 @@ def test_plot_axes():
         input_path=dummy_input_path,
         x_axis=dummy_x_axis,
         y_axis=dummy_y_axis,
-        output_path=output_path
     )
     axes_optimiser.decide_plot()
-    paths = ['tests/sns_plot.png']
+    paths = ['tests/dummy_data/sns_plot.png']
 
     for path_r in paths:
         assert path.exists(path_r) is True

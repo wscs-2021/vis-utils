@@ -23,7 +23,7 @@ class PlotOptimiser:
         @param options: string, path to options file (optional)
         @param input_path: string, path to output figure file (optional)
         """
-        self.data = None
+        self.data = ""
         self.input_path = input_path
         self.options = ast.literal_eval(options) if options else None
         self.x_axis = x_axis
@@ -120,7 +120,6 @@ class PlotOptimiser:
                                      "(data=self.data, x=option[0][0], y=option[0][1], hue=option[0][2], col=option[0][3])")
             else:
                 return "Error: Too many columns to plot for " + fig_name
-                continue
             count += 1
             plt.savefig(fig_name)
             final_string += self.output_path + "/" + fig_name + "\n"

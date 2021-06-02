@@ -37,13 +37,63 @@ brane import wscs-2021/vis-utils
 
 Function **plot**:
 
-`plot(input_path, <optional> x_axis, <optional> y_axis, <optional> hue_axis, <optional> options, <optional> output_path)`
+```
+plot(input_path, 
+    <optional> x_axis, 
+    <optional> y_axis, 
+    <optional> hue_axis, 
+    <optional> options, 
+    <optional> output_path)
+```
+
+### Examples
+
+> Empty strings `""` indicate `None`.
+
+Plot all:
 
 ```sh
 > import vis-utils;
-> plot("path/to/input.csv", (optional)"<column_name>", (optional)"<column_name>", (optional)"<column_name>", (optional) "options", (optional) "path/to/output.csv")
+> plot("path/to/input.csv", 
+      "", 
+      "", 
+      "", 
+      "", 
+      ""
+  )
 ```
-**Input**:
+
+Plot with options:
+
+```sh
+> import vis-utils;
+> plot("path/to/input.csv", 
+      "", 
+      "", 
+      "", 
+      [
+        [['species', 'flipper_length_mm', 'sex'], 'violinplot'],
+        [['species', 'bill_length_mm'], 'barplot']
+      ],
+      ""
+  )
+```
+
+Plot with axes given:
+
+```sh
+> import vis-utils;
+> plot("path/to/input.csv", 
+      "species", 
+      "island", 
+      "", 
+      "",
+      ""
+  )
+```
+
+### Arguments
+
 - REQUIRED `input_path`: string, path to .csv/.json/.parquet data file
     - Example: "tests/dummy_data/penguins.csv"
 - OPTIONAL `x_axis`: string, column name of desired x_axis
@@ -65,13 +115,16 @@ Function **plot**:
     - Example: "tests"
     - Default: None
 
-**Notes**:
+### Notes
+
+- Omitting an optional parameter can be done by passing an empty string `""`, e.g. `plot("path/to/input.csv", "species", "island", "", "" ,"")`
 - If no optional params are given, the function automatically plots all possible columns
 - If options is given, axes will be disregarded
 - Not all axes need to be specified, all three can be combined in any way (e.g. pass only x_axis and hue_axis)
 - If `output_path` is not specified, it will output to the same directory as the `input_path`
 
-**Output**:
+### Output
+
 - Output text: string, paths to files and/or possible errors
 - Output files: .png, plots in (optional) output_path
 
