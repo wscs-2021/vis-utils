@@ -1,4 +1,4 @@
-name: vis-utils # Package name in Brane
+name: vis_utils # Package name in Brane
 version: 0.1.0
 kind: compute
 
