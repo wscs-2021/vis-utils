@@ -48,48 +48,48 @@ plot(input_path,
 
 ### Examples
 
-> Empty strings `""` indicate `None`.
+> Empty strings `"None"` indicate `None`.
 
 Plot all:
 
 ```sh
-> import vis-utils;
+> import vis_utils;
 > plot("path/to/input.csv", 
-      "", 
-      "", 
-      "", 
-      "", 
-      ""
-  )
+      "None", 
+      "None", 
+      "None", 
+      "None", 
+      "None"
+  );
 ```
 
 Plot with options:
 
 ```sh
-> import vis-utils;
+> import vis_utils;
 > plot("path/to/input.csv", 
-      "", 
-      "", 
-      "", 
+      "None", 
+      "None", 
+      "None", 
       [
         [['species', 'flipper_length_mm', 'sex'], 'violinplot'],
         [['species', 'bill_length_mm'], 'barplot']
       ],
-      ""
-  )
+      "None"
+  );
 ```
 
 Plot with axes given:
 
 ```sh
-> import vis-utils;
+> import vis_utils;
 > plot("path/to/input.csv", 
       "species", 
       "island", 
-      "", 
-      "",
-      ""
-  )
+      "None", 
+      "None",
+      "None"
+  );
 ```
 
 ### Arguments
@@ -117,7 +117,7 @@ Plot with axes given:
 
 ### Notes
 
-- Omitting an optional parameter can be done by passing an empty string `""`, e.g. `plot("path/to/input.csv", "species", "island", "", "" ,"")`
+- Omitting an optional parameter can be done by passing the string `"None"`, e.g. `plot("path/to/input.csv", "species", "island", "None", "None" ,"None")`
 - If no optional params are given, the function automatically plots all possible columns
 - If options is given, axes will be disregarded
 - Not all axes need to be specified, all three can be combined in any way (e.g. pass only x_axis and hue_axis)
